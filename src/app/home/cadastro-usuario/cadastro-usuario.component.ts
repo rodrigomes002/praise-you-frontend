@@ -30,14 +30,11 @@ export class CadastroUsuarioComponent implements OnInit {
 
   cadastrar() {
     const usuario = this.cadastroUsuarioForm.getRawValue() as CadastroUsuario;
+    console.log(usuario);
     this.cadastroUsuarioService.cadastrar(usuario).subscribe(
       () => {
         this.router.navigate(['']);
-      },
-      (error) => {
-        console.log(error);
       }
     )
   }
-
 }

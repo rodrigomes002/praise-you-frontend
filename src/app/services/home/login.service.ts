@@ -11,6 +11,6 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   logar(usuario: any): Observable<any>{
-    return this.http.post(`${this.baseUrl}/apiautoriza/login`, usuario);
+    return this.http.post(`${this.baseUrl}/autoriza/login`, usuario);
   }
 }

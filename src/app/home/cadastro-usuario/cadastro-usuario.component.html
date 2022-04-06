@@ -1,19 +1,22 @@
-<div>
-  <form [formGroup]="cadastroUsuarioForm" (submit)="cadastrar()">
-    <div>
-      <label for="email">Email</label>
-      <input id="email" formControlName="email" type="text" />
+<div class="grid">
+  <div class="col">
+    <div
+      class="flex justify-content-center flex-wrap card-container"
+      style="min-height: 600px"
+    >
+      <div class="flex align-items-center justify-content-center">
+        <div class="p-fluid">
+          <h1>Cadastro</h1>
+          <form [formGroup]="cadastroUsuarioForm" (submit)="cadastrar()">
+            <div class="p-field" style="width: 500px">
+                <input class="margin-top-10" type="text" pInputText placeholder="Email" formControlName="email" />
+                <input class="margin-top-10" type="password" pPassword placeholder="Senha" formControlName="password" />
+                <button class="margin-top-10" pButton type="submit" label="Cadastrar"></button>
+                <p>Já possui conta? <a [routerLink]="['/login']">Cadastrar</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <label for="password">Senha</label>
-      <input id="password" formControlName="password" type="password" />
-    </div>
-
-    <div>
-      <button label="Cadastrar"></button>
-    </div>
-  </form>
-
-  <p>Já possui conta? <a [routerLink]="['']">Login</a></p>
+  </div>
 </div>

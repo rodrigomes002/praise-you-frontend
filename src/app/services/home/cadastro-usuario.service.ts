@@ -12,6 +12,6 @@ export class CadastroUsuarioService {
   constructor(private http: HttpClient) {}
 
   cadastrar(usuario: CadastroUsuario): Observable<any> {
-    return this.http.post(`${this.baseUrl}/apiautoriza/register`, usuario);
+    return this.http.post(`${this.baseUrl}/autoriza/register`, usuario);
   }
 }

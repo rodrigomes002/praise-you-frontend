@@ -3,9 +3,12 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "praise-you": {
+    "praise-you-frontend": {
       "projectType": "application",
       "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
         "@schematics/angular:application": {
           "strict": true
         }
@@ -17,20 +20,22 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/praise-you",
+            "outputPath": "dist/praise-you-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
+              "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/tailwind-light/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "node_modules/primeicons/primeicons.css",
-              "src/styles.css"
+              "node_modules/primeflex/primeflex.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -71,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "praise-you:build:production"
+              "browserTarget": "praise-you-frontend:build:production"
             },
             "development": {
-              "browserTarget": "praise-you:build:development"
+              "browserTarget": "praise-you-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "praise-you:build"
+            "browserTarget": "praise-you-frontend:build"
           }
         },
         "test": {
@@ -92,12 +97,13 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
+            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -105,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "praise-you"
+  "defaultProject": "praise-you-frontend"
 }

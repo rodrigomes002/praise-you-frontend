@@ -10,7 +10,7 @@ export class AutenticacaoService {
   constructor(private http: HttpClient) { }
 
   autenticar(email: string, senha: string): Observable<any> {
-    return this.http.post('https://localhost:5001/api/ApiAutoriza/login', {
+    return this.http.post('https://localhost:5001/api/autoriza/login', {
       email: email,
       password: senha
     });
